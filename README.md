@@ -1,6 +1,5 @@
 # [DtRatingBar](https://github.com/Yetland/DtRatingBar)
 一个使用在android上的RatingBar。
-
 #效果图
 ![Image text](https://github.com/Yetland/DtRatingBar/blob/master/demo.gif)
 
@@ -9,6 +8,7 @@
 * 大小自定义
 * 数量自定义
 * 可以打开或关闭半星
+
 #主要参数
 * rating_sum **总数**
 * rating_check **得分数**
@@ -22,6 +22,7 @@
 * rating_half_star_img **半星的图片**
 * rating_un_star_img **没星的图片**
 * rating_support_half **是否支持半星**
+
 #使用方法
 - 通过xml形式配置
 ```
