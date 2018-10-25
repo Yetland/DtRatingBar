@@ -29,6 +29,7 @@
                 app:rating_padding_right="2"
                 app:rating_padding_top="2"
                 app:rating_star_img="@drawable/ic_star"
+                app:rating_support_half="false"
                 app:rating_un_star_img="@drawable/ic_un_star"
                 app:rating_width="20" />
 
@@ -36,17 +37,7 @@
             <com.yetland.ratingbar.DtRatingBar
                 android:id="@+id/rating_bar_2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:rating_check="3.5"
-                app:rating_half_star_img="@mipmap/ic_half_star2"
-                app:rating_height="40"
-                app:rating_padding_bottom="5"
-                app:rating_padding_left="5"
-                app:rating_padding_right="5"
-                app:rating_padding_top="5"
-                app:rating_star_img="@mipmap/ic_star2"
-                app:rating_un_star_img="@mipmap/ic_un_star2"
-                app:rating_width="40" />
+                android:layout_height="wrap_content"/>
 
             <com.yetland.ratingbar.DtRatingBar
                 android:id="@+id/rating_bar_3"

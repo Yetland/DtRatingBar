@@ -28,7 +28,7 @@ public class DtRatingBar extends LinearLayout {
     /**
      * 是否支持半星打分
      */
-    private boolean mSupportHalf = true;
+    private boolean mSupportHalf;
     private Context mContext;
     /**
      * 子view的宽度
@@ -51,6 +51,7 @@ public class DtRatingBar extends LinearLayout {
         mRating = typedArray.getFloat(R.styleable.DtRatingBar_rating_check, 0f);
         mStars = typedArray.getInt(R.styleable.DtRatingBar_rating_sum, 5);
 
+        mSupportHalf = typedArray.getBoolean(R.styleable.DtRatingBar_rating_support_half, true);
         mRating = getRatingValue(mRating);
 
         int childViewWidth = typedArray.getInt(R.styleable.DtRatingBar_rating_width, 12);
@@ -240,7 +241,7 @@ public class DtRatingBar extends LinearLayout {
         if (xx > 0) {
             if (mSupportHalf) {
                 // 支持打半星
-                if (xx < half) {
+                if (xx <= half) {
                     // 小于一半的+0.5
                     rating = (float) (yy + 0.5);
                 } else {

@@ -12,5 +12,6 @@
         <attr name="rating_star_img" format="reference" /><!--星星选中的图片-->
         <attr name="rating_half_star_img" format="reference" /><!--星星选中一半的图片-->
         <attr name="rating_un_star_img" format="reference" /><!--星星未选中的图片-->
+        <attr name="rating_support_half" format="boolean" /><!--是否支持半星-->
     </declare-styleable>
 </resources>

@@ -16,6 +16,7 @@ import java.text.MessageFormat;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private DtRatingBar mRatingBar2;
     private DtRatingBar mDtRatingBar3;
     private TextView mTvRatingBar3Tip;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mDtRatingBar3 = findViewById(R.id.rating_bar_3);
+        mRatingBar2 = findViewById(R.id.rating_bar_2);
 
         mTvRatingBar3Tip = findViewById(R.id.tv_rating_bar_3_tip);
 
@@ -51,6 +53,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         mBtChangeHalf.setText(mDtRatingBar3.isSupportHalf() ? "关闭半星" : "打开半星");
+
+        RatingView.Builder builder = new RatingView.Builder()
+                .context(this)
+                .width(30)
+                .height(30)
+                .paddingLeft(2)
+                .paddingRight(2)
+                .paddingBottom(2)
+                .paddingTop(2)
+                .star(R.mipmap.ic_star2)
+                .unStar(R.mipmap.ic_un_star2)
+                .halfStar(R.mipmap.ic_half_star2);
+        mRatingBar2.setBuilder(builder);
+        mRatingBar2.setStars(6);
+        mRatingBar2.setRating(4.2f);
+        mRatingBar2.setSupportHalf(true);
+
     }
 
     @Override

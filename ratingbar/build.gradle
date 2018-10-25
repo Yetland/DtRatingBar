@@ -33,9 +33,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
-group = "com.yetland"
 version = "1.0.0"
-def libName = "DtRatingBar" // 上传到 Bintray 的 package 名称。
 
 def siteUrl = 'https://github.com/Yetland/DtRatingBar'
 def gitUrl = 'https://github.com/Yetland/DtRatingBar.git'
@@ -47,7 +45,7 @@ install {
             project {
                 packaging 'aar'
                 // 项目描述，复制我的话，这里需要修改。
-                name 'DtRatingBar'// 可选，项目名称。
+                name 'dtratingbar'// 可选，项目名称。
                 description 'A RATING BAR'// 可选，项目描述。
                 url siteUrl // 项目主页，这里是引用上面定义好。
 
@@ -62,8 +60,8 @@ install {
                 //填写开发者基本信息，复制我的，这里需要修改。
                 developers {
                     developer {
-                        id 'yetyoung' // 开发者的id。
-                        name 'yetyoung' // 开发者名字。
+                        id 'yetland' // 开发者的id。
+                        name 'yetland' // 开发者名字。
                         email 'yeliang1025@gmail.com' // 开发者邮箱。
                     }
                 }
@@ -100,9 +98,9 @@ bintray {
     configurations = ['archives']
     pkg {
         //这里的repo值必须要和你创建Maven仓库的时候的名字一样
-        repo = "DtRatingBar"
+        repo = "maven"
         //发布到JCenter上的项目名字
-        name = libName
+        name = "dtratingbar"
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
