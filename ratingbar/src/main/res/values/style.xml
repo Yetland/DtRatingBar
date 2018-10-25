@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DtRatingBar">
+        <attr name="rating_check" format="float" /><!--当前已选中的星星个数-->
+        <attr name="rating_sum" format="integer" /><!--总的星星数-->
+        <attr name="rating_width" format="integer" /><!--星星的宽度-->
+        <attr name="rating_height" format="integer" /><!--星星的高度-->
+        <attr name="rating_padding_left" format="integer" /><!--星星的padding left-->
+        <attr name="rating_padding_right" format="integer" /><!--星星的padding right-->
+        <attr name="rating_padding_top" format="integer" /><!--星星的padding top-->
+        <attr name="rating_padding_bottom" format="integer" /><!--星星的padding bottom-->
+        <attr name="rating_star_img" format="reference" /><!--星星选中的图片-->
+        <attr name="rating_half_star_img" format="reference" /><!--星星选中一半的图片-->
+        <attr name="rating_un_star_img" format="reference" /><!--星星未选中的图片-->
+    </declare-styleable>
+</resources>
