@@ -1,5 +1,9 @@
 # [DtRatingBar](https://github.com/Yetland/DtRatingBar)
 一个使用在android上的RatingBar。
+使用依赖：
+```
+implementation 'com.yetland.dtratingbar:dtratingbar:1.0'
+```
 # 效果图
 ![Image text](https://github.com/Yetland/DtRatingBar/blob/master/demo.gif)
 
