@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 /**
- * @author YETLAND
- * @date 2018/10/23 12:12
+ * @author YETLAND 2018/10/23 12:12
  */
 public class RatingView extends LinearLayout {
 
@@ -222,30 +221,30 @@ public class RatingView extends LinearLayout {
     }
 
     /**
-     * 给imageView加载图片
+     * set image resource
      *
-     * @param id 图片id
+     * @param id image id
      */
     private void setImageId(int id) {
         mImageView.setImageResource(id);
     }
 
     /**
-     * 设置当前view的状态
+     * set current view status
      *
      * @param position position
-     * @param rating   得分
+     * @param rating   rating
      */
     public void setState(int position, float rating) {
         setImageId(getImageRes(position, rating));
     }
 
     /**
-     * 根据得分和位置来判断当前的状态是啥
+     * get status
      *
-     * @param position 当前位置
-     * @param rating   得分
-     * @return 一个图片id
+     * @param position position
+     * @param rating   rating
+     * @return image id
      */
     private int getImageRes(int position, float rating) {
         int id = R.drawable.ic_un_star;
@@ -266,11 +265,9 @@ public class RatingView extends LinearLayout {
     }
 
     /**
-     * 根据当前的位置和得分，获取状态啥
-     *
-     * @param position 位置
-     * @param rating   得分
-     * @return 状态
+     * @param position position
+     * @param rating   rating
+     * @return status
      * {@link #STATE_STAR,#STATE_HALF_STAR,#STATE_UN_STAR}
      */
     private int getState(int position, float rating) {

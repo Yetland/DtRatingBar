@@ -8,34 +8,33 @@ import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
 /**
- * @author YETLAND
- * @date 2018/10/23 11:19
+ * @author YETLAND 2018/10/23 11:19
  */
 public class DtRatingBar extends LinearLayout {
 
     /**
-     * 共有几个星星
+     * stars sum
      */
     private int mStars;
     /**
-     * 得分
+     * rating
      */
     private float mRating;
     /**
-     * 子view的builder
+     * child view's builder
      */
     private RatingView.Builder mBuilder;
     /**
-     * 是否支持半星打分
+     * support half
      */
     private boolean mSupportHalf;
     private Context mContext;
     /**
-     * 子view的宽度
+     * child view width
      */
     private int mChildWidth;
     /**
-     * 精度为100，即0.00
+     * precision is 100 just like 0.00
      */
     public static int RATE = 100;
     /**
@@ -83,7 +82,7 @@ public class DtRatingBar extends LinearLayout {
     }
 
     /**
-     * 设置builder
+     * set builder
      *
      * @param builder builder
      */
@@ -94,7 +93,7 @@ public class DtRatingBar extends LinearLayout {
     }
 
     /**
-     * 手动设置得分
+     * set stars sum
      *
      * @param stars stars
      */
@@ -105,9 +104,9 @@ public class DtRatingBar extends LinearLayout {
     }
 
     /**
-     * 设置rating
+     * set rating
      *
-     * @param rating 得分
+     * @param rating rating
      */
     public void setRating(String rating) {
         if (!TextUtils.isEmpty(rating)) {
@@ -123,12 +122,12 @@ public class DtRatingBar extends LinearLayout {
     }
 
     /**
-     * 设置得分是多少
+     * set rating
      *
-     * @param rating 得分
+     * @param rating rating
      */
     public void setRating(float rating) {
-        // 得分限制
+        // ensure rating size
         rating = rating > mStars ? mStars : rating;
 
         mRating = getRatingValue(rating);
@@ -154,7 +153,7 @@ public class DtRatingBar extends LinearLayout {
 
 
     /**
-     * 更新子view的状态
+     * update child view
      */
     private void updateView() {
         for (int i = 0; i < mStars; i++) {
@@ -164,7 +163,7 @@ public class DtRatingBar extends LinearLayout {
     }
 
     /**
-     * 是否支持打半星
+     * support half star
      *
      * @param supportHalf true or false
      */
@@ -207,7 +206,7 @@ public class DtRatingBar extends LinearLayout {
 
             int width = getWidth();
             float x = event.getX();
-            // 越界判断
+            // size limit
             x = x > width ? width : x;
             x = x < 0 ? 0 : x;
 
@@ -224,36 +223,33 @@ public class DtRatingBar extends LinearLayout {
     }
 
     /**
-     * rating的转换。涉及到支持半星的操作
+     * rating transform
      *
-     * @param rating 原得分
-     * @return 计算后的得分
+     * @param rating before rating
+     * @return after rating
      */
     private float getRatingValue(float rating) {
-        // 一半，50
+        // half
         int half = RATE / 2;
         rating = rating * RATE;
-        // 余数
         int xx = (int) (rating % RATE);
-        // 整除的数
         int yy = (int) (rating / RATE);
 
         if (xx > 0) {
             if (mSupportHalf) {
-                // 支持打半星
+                // support half
                 if (xx <= half) {
-                    // 小于一半的+0.5
+                    // <= half ,  plus 0.5
                     rating = (float) (yy + 0.5);
                 } else {
-                    // 大于一半的+1
+                    // > half , plus 1
                     rating = yy + 1;
                 }
             } else {
-                // 不支持打半星，就直接+1
+                // if not support half ,plus 1
                 rating = yy + 1;
             }
         } else {
-            // 说明整除了
             rating = yy;
         }
         return rating;
@@ -262,10 +258,10 @@ public class DtRatingBar extends LinearLayout {
     public interface OnRatingChangeListener {
 
         /**
-         * 选择分数
+         * on rating change
          *
-         * @param rating 分数
-         * @param stars  总数
+         * @param rating rating
+         * @param stars  stars sum
          */
         void onChange(float rating, int stars);
     }
