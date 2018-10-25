@@ -2,7 +2,7 @@
 一个使用在android上的RatingBar。
 
 #效果图
-![效果图](https://upload-images.jianshu.io/upload_images/1087243-957af39cefdf18bc.gif?imageMogr2/auto-orient/strip)
+![Image text](https://github.com/Yetland/DtRatingBar/blob/master/demo.gif)
 
 #功能
 * 图片自定义
