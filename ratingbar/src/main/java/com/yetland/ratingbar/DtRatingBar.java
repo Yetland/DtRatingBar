@@ -34,6 +34,10 @@ public class DtRatingBar extends LinearLayout {
      */
     private int mChildWidth;
     /**
+     * child view height
+     */
+    private int mChildHeight;
+    /**
      * precision is 100 just like 0.00
      */
     public static int RATE = 100;
@@ -147,6 +151,7 @@ public class DtRatingBar extends LinearLayout {
             RatingView ratingView = new RatingView(mContext, mBuilder);
             ratingView.setState(i, mRating);
             mChildWidth = ratingView.getRatingViewWidth() + ratingView.getRatingViewPaddingLeft() + ratingView.getRatingViewPaddingRight();
+            mChildHeight = ratingView.getRatingViewHeight() + ratingView.getRatingViewPaddingTop() + ratingView.getRatingViewPaddingBottom();
             addView(ratingView);
         }
     }
@@ -204,13 +209,21 @@ public class DtRatingBar extends LinearLayout {
                     break;
             }
 
-            int width = getWidth();
-            float x = event.getX();
-            // size limit
-            x = x > width ? width : x;
-            x = x < 0 ? 0 : x;
+            if (getOrientation() == LinearLayout.HORIZONTAL) {
+                int width = getWidth();
+                float x = event.getX();
+                // size limit
+                x = x > width ? width : x;
+                x = x < 0 ? 0 : x;
 
-            mRating = x / mChildWidth;
+                mRating = x / mChildWidth;
+            } else {
+                int height = getHeight();
+                float y = event.getY();
+                y = y > height ? height : y;
+                y = y < 0 ? 0 : y;
+                mRating = y / mChildHeight;
+            }
             mRating = getRatingValue(mRating);
             if (mOnRatingChangeListener != null) {
                 mOnRatingChangeListener.onChange(mRating, mStars);
@@ -220,6 +233,16 @@ public class DtRatingBar extends LinearLayout {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public void setOrientation(int orientation) {
+        super.setOrientation(orientation);
+    }
+
+    @Override
+    public int getOrientation() {
+        return super.getOrientation();
     }
 
     /**

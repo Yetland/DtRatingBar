@@ -49,13 +49,13 @@ def prop = new Properties()
 prop.load(file('../local.properties').newDataInputStream())
 
 publish {
-    userOrg = 'yeliang1025'      // bintray注册的用户名
-    groupId = 'com.yetland.dtratingbar'
-    artifactId = 'dtratingbar'// bintray创建的package
-    publishVersion = '1.0'
-    desc = 'This is a nice library about rating bar for android'
-    website = 'https://github.com/Yetland/DtRatingBar'
-    bintrayUser = 'yetland'
+    userOrg = 'yeliang1025'      // 你要发布的某个组织下的组织名
+    groupId = 'com.yetland.dtratingbar' // 组织id，可以随意填写
+    artifactId = 'dtratingbar'// 某个组织下创建的仓库名
+    publishVersion = '1.0' // 发布的版本
+    desc = 'This is a nice library about rating bar for android' // 简介
+    website = 'https://github.com/Yetland/DtRatingBar' // 关联的网址
+    bintrayUser = 'yetland' // 用户名
     dryRun = false
     bintrayKey = prop.getProperty("BINTRAY_KEY")
 }
