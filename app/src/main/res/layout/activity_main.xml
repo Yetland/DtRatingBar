@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="16dp"
+              tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,13 +31,30 @@
                 app:rating_star_img="@drawable/ic_star"
                 app:rating_support_half="false"
                 app:rating_un_star_img="@drawable/ic_un_star"
-                app:rating_width="20" />
+                app:rating_width="20"/>
 
 
             <com.yetland.ratingbar.DtRatingBar
                 android:id="@+id/rating_bar_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
+            <com.yetland.ratingbar.DtRatingBar
+                android:id="@+id/rating_bar_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:rating_check="3.5"
+                app:rating_half_star_img="@drawable/ic_half_star"
+                app:rating_height="20"
+                app:rating_padding_bottom="2"
+                app:rating_padding_left="2"
+                app:rating_padding_right="2"
+                app:rating_padding_top="2"
+                app:rating_star_img="@drawable/ic_star"
+                app:rating_sum="5"
+                app:rating_un_star_img="@drawable/ic_un_star"
+                app:rating_width="20"/>
 
             <com.yetland.ratingbar.DtRatingBar
                 android:id="@+id/rating_bar_3"
@@ -53,13 +70,13 @@
                 app:rating_star_img="@drawable/ic_star"
                 app:rating_sum="7"
                 app:rating_un_star_img="@drawable/ic_un_star"
-                app:rating_width="20" />
+                app:rating_width="20"/>
 
             <TextView
                 android:id="@+id/tv_rating_bar_3_tip"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,28 +88,28 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="更换图片" />
+                    android:text="更换图片"/>
 
                 <Button
                     android:id="@+id/bt_change_sum"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="更换数量" />
+                    android:text="更换数量"/>
 
                 <Button
                     android:id="@+id/bt_change_size"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="更换大小" />
+                    android:text="更换大小"/>
 
                 <Button
                     android:id="@+id/bt_change_half"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="支持半星" />
+                    android:text="支持半星"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

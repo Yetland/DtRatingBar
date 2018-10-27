@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yetland.ratingbar.DtRatingBar;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private DtRatingBar mRatingBar2;
     private DtRatingBar mDtRatingBar3;
+    private DtRatingBar mDtRatingBar4;
     private TextView mTvRatingBar3Tip;
 
     private Button mBtChangeImage;
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mDtRatingBar4 = findViewById(R.id.rating_bar_4);
         mDtRatingBar3 = findViewById(R.id.rating_bar_3);
         mRatingBar2 = findViewById(R.id.rating_bar_2);
 
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtChangeSum.setOnClickListener(this);
         mBtChangeSize.setOnClickListener(this);
         mBtChangeHalf.setOnClickListener(this);
+
+        mDtRatingBar4.setEnabled(true);
 
         mDtRatingBar3.setEnabled(true);
         mDtRatingBar3.setSupportHalf(true);
