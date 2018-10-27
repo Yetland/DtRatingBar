@@ -2,7 +2,7 @@
 一个使用在android上的RatingBar。
 使用依赖：
 ```
-implementation 'com.yetland.dtratingbar:dtratingbar:1.0'
+implementation 'com.yetland.dtratingbar:dtratingbar:1.0.1'
 ```
 # 效果图
 ![Image text](https://github.com/Yetland/DtRatingBar/blob/master/demo.gif)
@@ -12,6 +12,7 @@ implementation 'com.yetland.dtratingbar:dtratingbar:1.0'
 * 大小自定义
 * 数量自定义
 * 可以打开或关闭半星
+* 支持水平和垂直布局
 
 # 主要参数
 * rating_sum **总数**
